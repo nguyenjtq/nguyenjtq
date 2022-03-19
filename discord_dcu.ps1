@@ -1,9 +1,8 @@
+# Env variables reference: https://renenyffenegger.ch/notes/Windows/dirs/Users/username/index
 $env:USERPROFILE
 
 # URL of Dell Command Update and destination
 $url = "https://dl.dell.com/FOLDER07870027M/1/Dell-Command-Update-Windows-Universal-Application_PWD0M_WIN_4.4.0_A00.EXE"
-
-# Env variables reference: https://renenyffenegger.ch/notes/Windows/dirs/Users/username/index
 $dest = "$env:USERPROFILE\downloads\dcu_4.4.0.exe"
 
 # Published hash of DCU file
