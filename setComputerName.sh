@@ -12,9 +12,10 @@ ENDofOSAscript
 ###################################
 # Sets local computer to new name #
 ###################################
-/usr/sbin/scutil --set HostName $computerName
-/usr/sbin/scutil --set ComputerName $computerName
-/usr/sbin/scutil --set LocalHostName $computerName
+/usr/local/jamf/bin/jamf setComputerName -name $computerName
+# /usr/sbin/scutil --set HostName $computerName
+# /usr/sbin/scutil --set ComputerName $computerName
+# /usr/sbin/scutil --set LocalHostName $computerName
 
 ##############################
 # Jamf Helper Popup Window 1 #
