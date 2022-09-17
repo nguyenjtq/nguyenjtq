@@ -86,7 +86,7 @@ if [ ! -z "$6" ]
 then
 haltMsg="$6"
 else
-haltMsg="Please Contact IT for Further assistance."
+haltMsg="Please contact IT for further assistance."
 fi
 
 if [[ ! -z "$7" ]]; then
