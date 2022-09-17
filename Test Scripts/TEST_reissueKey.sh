@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://github.com/jamf/FileVault2_Scripts/blob/master/reissueKey.sh
+
 ####################################################################################################
 #
 # Copyright (c) 2017, JAMF Software, LLC.  All rights reserved.
