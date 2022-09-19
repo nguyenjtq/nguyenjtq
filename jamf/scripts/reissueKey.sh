@@ -142,7 +142,7 @@ passwordPrompt () {
 echo "Prompting ${userName} for their login password."
 userPass=$(/usr/bin/osascript -e "
 on run
-display dialog \"To generate a new FileVault key\" & return & \"Enter login password for '$userName'\" default answer \"\" with title \"$orgName FileVault Key Reset\" buttons {\"Cancel\", \"Ok\"} default button 2 with icon POSIX file \"$brandIcon\" with text and hidden answer
+display dialog \"To generate a new FileVault key\" & return & \"Enter login password for '$userName'\" default answer \"\" with title \"$orgName FileVault Key Reset\" buttons {\"Cancel\", \"OK\"} default button 2 with icon POSIX file \"$brandIcon\" with text and hidden answer
 set userPass to text returned of the result
 return userPass
 end run")
