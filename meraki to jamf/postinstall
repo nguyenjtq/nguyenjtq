@@ -1,5 +1,0 @@
-#!/bin/bash
-
-sudo profiles renew -type='enrollment'
-
-exit 0
