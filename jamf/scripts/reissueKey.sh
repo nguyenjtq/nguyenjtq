@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# https://github.com/jamf/FileVault2_Scripts/blob/master/reissueKey.sh
-
 ####################################################################################################
 #
 # Copyright (c) 2017, JAMF Software, LLC.  All rights reserved.
@@ -142,13 +140,13 @@ passwordPrompt () {
 echo "Prompting ${userName} for their login password."
 userPass=$(/usr/bin/osascript -e "
 on run
-display dialog \"To generate a new FileVault key\" & return & \"Enter login password for '$userName'\" default answer \"\" with title \"$orgName FileVault Key Reset\" buttons {\"Cancel\", \"OK\"} default button 2 with icon POSIX file \"$brandIcon\" with text and hidden answer
+display dialog \"To generate a new FileVault key\" & return & \"enter login password for '$userName'\" default answer \"\" with title \"$orgName FileVault Key Reset\" buttons {\"Cancel\", \"OK\"} default button 2 with icon POSIX file \"$brandIcon\" with text and hidden answer
 set userPass to text returned of the result
 return userPass
 end run")
 if [ "$?" == "1" ]
 then
-echo "User Canceled"
+echo "User canceled"
 exit 0
 fi
 try=$((try+1))
@@ -186,14 +184,14 @@ fi
 successAlert () {
 /usr/bin/osascript -e "
 on run
-display dialog \"\" & return & \"Your FileVault Key was successfully Changed\" with title \"$orgName FileVault Key Reset\" buttons {\"Close\"} default button 1 with icon POSIX file \"$brandIcon\"
+display dialog \"\" & return & \"Your FileVault key was successfully changed\" with title \"$orgName FileVault Key Reset\" buttons {\"Close\"} default button 1 with icon POSIX file \"$brandIcon\"
 end run"
 }
 
 errorAlert () {
  /usr/bin/osascript -e "
 on run
-display dialog \"FileVault Key not Changed\" & return & \"$result\" buttons {\"Cancel\", \"Try Again\"} default button 2 with title \"$orgName FileVault Key Reset\" with icon POSIX file \"$brandIcon\"
+display dialog \"FileVault Key not changed\" & return & \"$result\" buttons {\"Cancel\", \"Try Again\"} default button 2 with title \"$orgName FileVault Key Reset\" with icon POSIX file \"$brandIcon\"
 end run"
  if [ "$?" == "1" ]
   then
@@ -207,7 +205,7 @@ fi
 haltAlert () {
 /usr/bin/osascript -e "
 on run
-display dialog \"FileVault Key not changed\" & return & \"$haltMsg\" buttons {\"Close\"} default button 1 with title \"$orgName FileVault Key Reset\" with icon POSIX file \"$brandIcon\"
+display dialog \"FileVault key not changed\" & return & \"$haltMsg\" buttons {\"Close\"} default button 1 with title \"$orgName FileVault Key Reset\" with icon POSIX file \"$brandIcon\"
 end run
 "
 }
@@ -217,11 +215,11 @@ do
 passwordPrompt
 if [[ $result = *"Error"* ]]
 then
-echo "Error Changing Key"
+echo "Error changing key"
 if [ $try -ge $maxTry ]
 then
 haltAlert
-echo "Quitting.. Too Many failures"
+echo "Quitting.. Too many failures"
 exit 0
 else
 echo $result
@@ -229,7 +227,7 @@ errorAlert
 fi
 else
 /usr/local/jamf/bin/jamf recon
-echo "Successfully Changed FV2 Key"
+echo "Successfully changed FV2 Key"
 successAlert
 exit 0
 fi
