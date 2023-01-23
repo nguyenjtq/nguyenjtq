@@ -24,7 +24,7 @@ fi
 ## Get current user
 loggedInUser=$(/usr/bin/stat -f %Su /dev/console)
 
-## Enable Self Service Debug logs
+## Disable Self Service Debug logs
 rm -f /Users/$loggedInUser/Library/Preferences/com.jamfsoftware.selfservice.plist
 echo "Disabled Self Service debugging mode.\n"
 
