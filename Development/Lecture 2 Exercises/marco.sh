@@ -11,7 +11,7 @@ pwd=$(marco)
 
 # Function to change back to the directory of the marco.txt file
 function polo () {
-	if [[ $(ls $pwd | grep "marco.txt") = "marco.txt" ]]
+	if [[ $(ls $pwd | grep --only-matching "marco.txt") = "marco.txt" ]]
 	then
 		cd $pwd
 	else
