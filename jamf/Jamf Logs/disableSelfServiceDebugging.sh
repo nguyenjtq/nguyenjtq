@@ -4,7 +4,7 @@ selfServiceBrandIcon="/Users/$3/Library/Application Support/com.jamfsoftware.sel
 jamfBrandIcon="/Library/Application Support/JAMF/Jamf.app/Contents/Resources/AppIcon.icns"
 
 if [ ! -z "$4" ]; then
-    orgName="$4 -"
+    orgName="$4"
 fi
 
 if [ ! -z "$6" ]; then
