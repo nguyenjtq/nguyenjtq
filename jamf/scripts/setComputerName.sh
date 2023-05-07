@@ -5,10 +5,15 @@
 # - https://github.com/jamf/Provisioning-Workflows/blob/master/Provisioning_Examples/provisioningWithCompNamePrompt.sh
 # Script modified based on aforementioned links. First link for using osascript with logic for capturing nil (cancelled), empty (""), and proper user input. Second link for changing the computer name itself.
 
+# Parameter 4 = Set organization name in pop up window
+# Parameter 5 = Failed Attempts until Stop
+# Parameter 6 = Custom text for contact information.
+# Parameter 7 = Custom Branding - Defaults to Self Service Icon
+
+## Customizes Prompt Window
 selfServiceBrandIcon="/Users/$3/Library/Application Support/com.jamfsoftware.selfservice.mac/Documents/Images/brandingimage.png"
 jamfBrandIcon="/Library/Application Support/JAMF/Jamf.app/Contents/Resources/AppIcon.icns"
 
-# 
 if [ ! -z "$4" ]; then
     orgName="$4"
 fi
