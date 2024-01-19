@@ -1,11 +1,11 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 ## Get current user
 loggedInUser=$(/usr/bin/stat -f %Su /dev/console)
 
 ## Profile picture paths
-userProfilePic="/Users/Shared/User Icon.png"
 adminProfilePic="/Users/Shared/Admin Icon.png"
+userProfilePic="/Users/Shared/User Icon.png"
 
 ## Checks if user and admin profile pictures exist
 if [[ -f $userProfilePic && -f $adminProfilePic ]]; then
@@ -15,7 +15,7 @@ if [[ -f $userProfilePic && -f $adminProfilePic ]]; then
     /usr/bin/dscl . delete "/Users/$loggedInUser" JPEGPhoto
 
     ## Sets profile picture according to who is logged in.
-    if [[ $loggedInUser == "discord" ]]; then
+    if [[ $loggedInUser == "discord" || $loggedInUser == "Discord" ]]; then
         /usr/bin/dscl . create "/Users/$loggedInUser" Picture "$adminProfilePic"
     else
         /usr/bin/dscl . create "/Users/$loggedInUser" Picture "$userProfilePic"
@@ -23,5 +23,5 @@ if [[ -f $userProfilePic && -f $adminProfilePic ]]; then
 
     echo "Profile picture successfully set for $loggedInUser."
 else
-    echo "User profile pictures do not exist.\nConfirm if the following Jamf policy ran successfully: \"Store User Icons and Wallpaper\""
+    printf "User profile pictures do not exist.\nConfirm if the following Jamf policy ran successfully: \"Store User Icons and Wallpaper\""
 fi
