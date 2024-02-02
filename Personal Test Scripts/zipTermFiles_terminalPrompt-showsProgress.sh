@@ -30,10 +30,6 @@ loggedInUser=$(/usr/bin/stat -f %Su /dev/console)
 ## Computer Serial Number
 serialNumber=$(system_profiler SPHardwareDataType | grep Serial |  awk '{print $NF}')
 
-## Disk capacity
-diskCap=$(df -Ph . | tail -1 | awk '{print $5}')
-intDiskCap="${diskCap//%}"
-
 
 ##############################
 # Validate Response function #
@@ -74,8 +70,6 @@ askInput() {
         end try
         if theTextReturned is "nil" then
             return "cancelled"
-        else if theTextReturned is "" then
-            return "noinput"
         else
             return theTextReturned
         end if
@@ -84,14 +78,11 @@ ENDofOSAscript
     validateResponse "$userFolder"
 }
 
+
 ########
 # MAIN #
 ########
 
-if [ "$intDiskCap" -ge "50" ]; then
-    /usr/bin/osascript -e "display dialog \"Disk usage is $diskCap, you will need an external drive.\" with title \"$orgName Self Service\" buttons {\"Close\"} default button 1 with icon POSIX file \"$brandIcon\""
-else
-    askInput "$loggedInUser"
-fi
+askInput "$loggedInUser"
 
 exit 0
