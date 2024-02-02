@@ -54,7 +54,7 @@ validateResponse() {
 }
 
 #################################
-# Promts User For Computer Name #
+# Prompts User For Computer Name #
 #################################
 askInput() {
 computerName=$(sudo -u "$loggedInUser" /usr/bin/osascript <<ENDofOSAscript
