@@ -55,13 +55,6 @@ validateResponse() {
 
             ## Bring Terminal to foreground, run zip of chosen folder, open Finder to save location when done. Uses `osascript` to run Terminal as local user.
             /usr/bin/osascript -e "tell application \"Terminal\" to activate" -e "tell application \"Terminal\" to do script \"sudo zip -ryv '$zipSaveLocation' '/Users/$userFolder' -x '/Users/$userFolder/Library/*' && open -R '$zipSaveLocation'\""
-
-            ## SHOULD I CAFFEINATE THIS ^^^^^?
-            ## would look something like
-            # /usr/bin/osascript -e "tell application \"Terminal\" to activate" -e "tell application \"Terminal\" to do script \"caffeinate -mudsi & (sudo zip -ryv '$zipSaveLocation' '/Users/$userFolder' -x '/Users/$userFolder/Library/*' && open -R '$zipSaveLocation')\""
-
-            ## Do not copy `~/Library` and any `.*` files, so any files that start with a period. Those files are hidden files.
-            # & zip -ryv "$zipSaveLocation" "/Users/$userFolder" -x "/Users/$userFolder/Library/*" -x "/Users/$userFolder/*/.*" -x "/Users/$userFolder/.*"
     esac
 }
 
@@ -90,15 +83,6 @@ ENDofOSAscript
     )
     validateResponse "$userFolder"
 }
-
-###################################
-# [TBD] CALCULATE AVAILABLE SPACE #
-###################################
-## [Calculate space availability for zip]
-    # [throw error if not enough space]
-        # [provide option to use external storage and prompt for external storage option]
-            # [somehow provide a list to choose for potential storage options]
-    # [proceed if enough space]
 
 ########
 # MAIN #
