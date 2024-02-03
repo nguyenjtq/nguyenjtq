@@ -108,7 +108,7 @@ EOF
         "~/Desktop" )
             ## If disk utilization >= 50%, prompt for yes/no to continue or cancel.
             if [ "$intDiskCap" -ge "50" ]; then
-                button=$(/usr/bin/osascript -e "display dialog \"Disk usage is $diskCap, you may need a formatted (exFAT, FAT32, APFS) external drive with sufficient storage. Would you like to continue?.\" with title \"$orgName Self Service\" buttons {\"No\", \"Yes\"} default button 1 with icon POSIX file \"$brandIcon\"")
+                button=$(/usr/bin/osascript -e "display dialog \"Zipping to the local disk with disk usage at $diskCap may result in an error. You may need a formatted (exFAT, FAT32, APFS) external drive with sufficient storage. Continue anyways?.\" with title \"$orgName Self Service\" buttons {\"No\", \"Yes\"} default button 1 with icon POSIX file \"$brandIcon\"")
             fi
             ## If no, cancel and exit script.
             if [ "$button" == "button returned:No" ]; then
