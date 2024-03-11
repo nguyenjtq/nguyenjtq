@@ -1,5 +1,9 @@
 import requests
 
+'''
+Chris Phan's test script
+'''
+
 def computer_command_devicelock(self, passcode, computerId):
     jamfUrl = f'{self._tenant}/JSSResource/computercommands/command/DeviceLock/passcode/{passcode}/id/{computerId}'
     headers = {

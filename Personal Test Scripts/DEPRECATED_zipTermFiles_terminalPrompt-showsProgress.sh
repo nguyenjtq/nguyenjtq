@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+####################################################################################################
+#
+# Deprecation Reason
+#
+# This script was meant to zip terminated user folders using the logged in user.
+# This script was meant to show the progress of the zip process.
+# This script does show progress of the zip, but does not let user choose output destination.
+# Ultimately settled with using `zipUserFolder_promptOutputLocation.sh` script which allows for choosing output destination + zip progress.
+#
+####################################################################################################
+
 #################
 # Set variables #
 #################

@@ -1,5 +1,12 @@
 # Run 'Set-ExecutionPolicy Bypass' in order to run this script directly from PowerShell.
 
+<#
+Deprecation Reason
+
+This was a basic script that would allow zipping of termed user folders.
+Opted for a script that allows users to choose the folder to zip.
+#>
+
 ## Gets current logged in user
 $loggedInUser = $($env:USERNAME)
 Write-Output "Logged in as $loggedInUser"

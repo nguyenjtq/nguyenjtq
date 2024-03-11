@@ -1,4 +1,3 @@
-## Courtesy of Patrick Betts
 #Install PS7zip Module
 Install-Module -Name PS7zip -Force
 

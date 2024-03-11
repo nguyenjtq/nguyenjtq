@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+####################################################################################################
+#
+# Deprecation Reason
+#
+# This script was meant to zip terminated user folders using Jamf's root user.
+# Caveat with this script is it can't show progress in Terminal if ran as root.
+# Ultimately decided not to use this since it seemed better to show progress vs no progress.
+#
+####################################################################################################
+
 #################
 # Set variables #
 #################
