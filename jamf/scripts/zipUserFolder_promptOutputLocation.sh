@@ -40,9 +40,9 @@ intDiskCap="${diskCap//%}"
 #####################################
 askInput() {
     userFolder=$(sudo -u "$loggedInUser" /usr/bin/osascript <<EOF
-        --initiate variable
+        -- initiate variable
         set theTextReturned to "nil"
-        --have user choose which user folder to back up
+        -- have user choose which user folder to back up
         try
             tell app "System Events"
                 activate
@@ -66,9 +66,9 @@ EOF
     ## Prompt to choose destination location.
     ## Use either ~/Desktop or External Volume. If External Volume, list /Volumes folder and choose.
     outputFolder=$(sudo -u "$loggedInUser" /usr/bin/osascript <<EOF
-        --initiate variable
+        -- initiate variable
         set chosenVolume to "nil"
-        --have user choose between local desktop or external volume
+        -- have user choose between local desktop or external volume
         try
             tell app "System Events"
                 activate
@@ -80,7 +80,7 @@ EOF
             return "cancelled"
         else if chosenVolume is "~/Desktop" then
             return chosenVolume
-        --essentially if chosenVolume == "External Volume", list and choose among /Volumes
+        -- essentially if chosenVolume == "External Volume", list and choose among /Volumes
         else
             set chosenVolume to "nil"
             try
