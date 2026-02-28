@@ -1,7 +1,12 @@
 {
 	"folders": [
 		{
+			"name": "nguyenjtq",
 			"path": "."
+		},
+		{
+			"name": "discordapp_com DNS",
+			"path": "/Users/jamesnguyen/git_repositories/discord/discord_devops/terraform/cloudflare/dns-rules/discordapp_com"
 		}
 	]
 }

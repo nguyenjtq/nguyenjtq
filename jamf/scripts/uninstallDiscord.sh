@@ -11,7 +11,7 @@ printf "\nCHECK FOR %s INSTALLATION\n\n" "$appName"
 
 # kill app if running
 echo "Closing $appName"
-pkill -2 -f "$appName"
+pkill -2 "$appName"
 sleep 5
 
 # check for app
